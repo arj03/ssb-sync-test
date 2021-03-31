@@ -1,4 +1,5 @@
 const pull = require('pull-stream')
+const bipf = require('bipf')
 
 const dir = '/tmp/ssb-sync-test'
 
@@ -18,7 +19,11 @@ SSB.events.on('SSB: loaded', function() {
         id: "@6CAxOI3f+LUOVrbAl0IemqiS7ATpQvr9Mdw9LC4+Uv0=.ed25519",
         seq: 0, keys: false
       }),
-      pull.asyncMap(SSB.db.validateAndAddOOO),
+      pull.asyncMap((msg, cb) => {
+        //console.log(msg)
+        cb()
+        //SSB.db.add(msg, cb)
+      }),
       pull.collect((err, msgs) => {
         if (err) throw err
         
