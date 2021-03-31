@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "ssb-browser-core": "^9.3.3"
+  }
+}
