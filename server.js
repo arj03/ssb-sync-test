@@ -10,6 +10,9 @@ require('ssb-browser-core/core.js').init(dir, {
     outgoing: {
       net: [{ transform: 'shs' }],
     }
+  },
+  core: {
+    startOffline: true
   }
 })
 
